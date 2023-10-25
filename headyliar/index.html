@@ -4,24 +4,27 @@
 <head>
   <meta charset="utf-8">
   <title>Heady Liar</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
   <style>
     body {
-      background-image: url("../background.jpg");
-      background-repeat: no-repeat;
+      background-image: url("../bg-subject.jpg");
+      background-repeat: repeat;
       background-attachment: fixed;
       background-size: 100%;
     }
 
     .project_name {
       top: 80px;
-      color: black;
-      font-family: "等线";
       font-size: 35px;
       text-align: center;
+      color: #eb5424;
+      font-family: 'FontAwesome';
+      font-weight: bold;
     }
 
     .project_detail {
       top: 80px;
+      font-size: 100px;
     }
 
     .subvideo {
@@ -57,7 +60,9 @@
     .project_photo {
       top: -0.6%;
       text-align: center;
-      padding-top: 0.48% padding-bottom: 0px;
+      padding-top: 0%;
+      padding-bottom: 0px;
+      border-radius: 20px;
     }
 
     .describe {
@@ -68,10 +73,11 @@
 
     .describe_detail {
       position: center;
-      font-family: "等线";
+      color: black;
       font-size: 20px;
       text-align: left;
-      word-break: normal | break-all | keep-all；
+      word-break: normal | break-all | keep-all;
+      font-family: 'FontAwesome'
     }
 
     .github {
@@ -96,17 +102,26 @@
       border-radius: 100%;
     }
 
+    .back {
+      position: fixed;
+      top: 0%;
+      left: 0%;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+    }
+
     .last_arrow {}
 
     .next_arrow {}
 
     .last_img {
       position: fixed;
-      top: 27.9%;
+      top: 42.5%;
       left: 2.5%;
       width: 12%;
       height: width;
-      border-radius: 0px;
+      border-radius: 8px;
     }
 
     .last_img:hover {
@@ -119,31 +134,14 @@
 
     .next_img {
       position: fixed;
-      top: 57.1%;
-      left: 2.5%;
+      top: 42.5%;
+      right: 2.5%;
       width: 12%;
       height: width;
-      border-radius: 0px;
+      border-radius: 8px;
     }
 
     .next_img:hover {
-      margin-top: -3px;
-      margin-right: -3px;
-      margin-bottom: -3px;
-      margin-left: -3px;
-      border: 3px solid #000;
-    }
-
-    .this_img {
-      position: fixed;
-      top: 42.5%;
-      left: 2.5%;
-      width: 12%;
-      height: width;
-      border-radius: 0px;
-    }
-
-    .this_img:hover {
       margin-top: -3px;
       margin-right: -3px;
       margin-bottom: -3px;
@@ -187,21 +185,93 @@
       border: 3px solid #000;
     }
 
-    .back {
-      position: fixed;
-      top: 0%;
-      left: 0%;
-      width: 50px;
-      height: 50px;
-      border-radius: 100%;
+    .navbar-default {
+      border: none;
+      -webkit-box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
+      box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-default .navbar-brand {
+      color: #212227;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 45px;
+      padding: 5px 0 0 12px;
+      font-family: 'FontAwesome';
+    }
+
+    .navbar-default .navbar-nav li a {
+      color: #202020;
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 20px;
+      letter-spacing: 1px;
+      font-family: 'FontAwesome';
+    }
+
+    .navbar-default .navbar-nav li a:hover {
+      color: #eb5424;
+    }
+
+    .navbar-default .navbar-nav>li>a:hover,
+    .navbar-default .navbar-nav>li>a:focus {
+      color: #eb5424;
+      background-color: transparent;
+    }
+
+    .navbar-default .navbar-nav>.active>a,
+    .navbar-default .navbar-nav>.active>a:hover,
+    .navbar-default .navbar-nav>.active>a:focus {
+      color: #eb5424;
+      background-color: transparent;
+    }
+
+    .navbar-default .navbar-toggle {
+      border: none;
+      padding-top: 10px;
+    }
+
+    .navbar-default .navbar-toggle .icon-bar {
+      background: #eb5424;
+      border-color: transparent;
+    }
+
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus {
+      background-color: transparent
     }
   </style>
+
 </head>
 
 <body>
-  <a href="https://lauyikfung.github.io">
-    <img src="../back.png" class="back" title="Back to the Mainpage"></img>
-  </a>
+  <div class="navbar navbar-default bs-dos-nav navbar-fixed-top sticky-navigation" role="navigation">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target="#rock-navigation">
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+        </button>
+        <a href="https://lauyikfung.github.io" class="navbar-brand">Lewis Yik-fung Lau</a>
+      </div>
+      <nav class="collapse navbar-collapse" id="rock-navigation">
+        <ul class="nav navbar-nav navbar-right main-navigation text-uppercase">
+          <li><a href="https://lauyikfung.github.io/multiomics" class="smoothScroll">Previous Project</a></li>
+          <li><a href="https://lauyikfung.github.io/JapanMJ" class="smoothScroll">Next Project</a></li>
+          <li><a href="https://github.com/lauyikfung/headyliar" class="smoothScroll">Github</a></li>
+          <li><a href="../CV_proposal.pdf" class="smoothScroll">PROJECT PDF</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+  <div class="project_name">
+    <p class="name_detail">Heady Liar</p>
+  </div>
   <div class="project_name">
     <p class="name_detail">Heady Liar</p>
   </div>
@@ -218,21 +288,10 @@
       on), Photo Modification (with functions of denoising, brightness modification and so on) and Style Transformation
       (with styles including nostalgia, light spot and so on).</p>
   </div>
-  <a href="https://github.com/lauyikfung/headyliar">
-    <img src="../github-label.png" class="github" title="Go to github repository"></img>
-  </a>
-  <a href="../CV_proposal.pdf">
-    <img src="../software.png" class="software" title="Download Project"></img>
-  </a>
-  <img src="../headyliar.png" class="this_img"></img>
   <a href="https://lauyikfung.github.io/multiomics">
     <img src="../multiomics.png" class="last_img"></img></a>
   <a href="https://lauyikfung.github.io/JapanMJ">
     <img src="../JapanMJ.png" class="next_img"></img></a>
-  <a href="https://lauyikfung.github.io/multiomics">
-    <img src="../up.png" class="up"></img></a>
-  <a href="https://lauyikfung.github.io/JapanMJ">
-    <img src="../down.png" class="down"></img></a>
 </body>
 
 </html>

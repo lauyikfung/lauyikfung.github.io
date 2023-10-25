@@ -4,24 +4,27 @@
 <head>
   <meta charset="utf-8">
   <title>CodeGeeX</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
   <style>
     body {
-      background-image: url("../background.jpg");
-      background-repeat: no-repeat;
+      background-image: url("../bg-subject.jpg");
+      background-repeat: repeat;
       background-attachment: fixed;
       background-size: 100%;
     }
 
     .project_name {
       top: 80px;
-      color: black;
-      font-family: "等线";
       font-size: 35px;
       text-align: center;
+      color: #eb5424;
+      font-family: 'FontAwesome';
+      font-weight: bold;
     }
 
     .project_detail {
       top: 80px;
+      font-size: 100px;
     }
 
     .subvideo {
@@ -57,7 +60,9 @@
     .project_photo {
       top: -0.6%;
       text-align: center;
-      padding-top: 0.48% padding-bottom: 0px;
+      padding-top: 0%;
+      padding-bottom: 0px;
+      border-radius: 20px;
     }
 
     .describe {
@@ -68,10 +73,11 @@
 
     .describe_detail {
       position: center;
-      font-family: "等线";
-      font-size: 20px;
+      color: black;
+      font-size: 18px;
       text-align: left;
-      word-break: normal | break-all | keep-all；
+      word-break: normal | break-all | keep-all;
+      font-family: 'FontAwesome'
     }
 
     .github {
@@ -96,17 +102,26 @@
       border-radius: 100%;
     }
 
+    .back {
+      position: fixed;
+      top: 0%;
+      left: 0%;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+    }
+
     .last_arrow {}
 
     .next_arrow {}
 
     .last_img {
       position: fixed;
-      top: 27.9%;
+      top: 42.5%;
       left: 2.5%;
       width: 12%;
       height: width;
-      border-radius: 0px;
+      border-radius: 8px;
     }
 
     .last_img:hover {
@@ -119,31 +134,14 @@
 
     .next_img {
       position: fixed;
-      top: 57.1%;
-      left: 2.5%;
+      top: 42.5%;
+      right: 2.5%;
       width: 12%;
       height: width;
-      border-radius: 0px;
+      border-radius: 8px;
     }
 
     .next_img:hover {
-      margin-top: -3px;
-      margin-right: -3px;
-      margin-bottom: -3px;
-      margin-left: -3px;
-      border: 3px solid #000;
-    }
-
-    .this_img {
-      position: fixed;
-      top: 42.5%;
-      left: 2.5%;
-      width: 12%;
-      height: width;
-      border-radius: 0px;
-    }
-
-    .this_img:hover {
       margin-top: -3px;
       margin-right: -3px;
       margin-bottom: -3px;
@@ -187,21 +185,91 @@
       border: 3px solid #000;
     }
 
-    .back {
-      position: fixed;
-      top: 0%;
-      left: 0%;
-      width: 50px;
-      height: 50px;
-      border-radius: 100%;
+    .navbar-default {
+      border: none;
+      -webkit-box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
+      box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-default .navbar-brand {
+      color: #212227;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 45px;
+      padding: 5px 0 0 12px;
+      font-family: 'FontAwesome';
+    }
+
+    .navbar-default .navbar-nav li a {
+      color: #202020;
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 20px;
+      letter-spacing: 1px;
+      font-family: 'FontAwesome';
+    }
+
+    .navbar-default .navbar-nav li a:hover {
+      color: #eb5424;
+    }
+
+    .navbar-default .navbar-nav>li>a:hover,
+    .navbar-default .navbar-nav>li>a:focus {
+      color: #eb5424;
+      background-color: transparent;
+    }
+
+    .navbar-default .navbar-nav>.active>a,
+    .navbar-default .navbar-nav>.active>a:hover,
+    .navbar-default .navbar-nav>.active>a:focus {
+      color: #eb5424;
+      background-color: transparent;
+    }
+
+    .navbar-default .navbar-toggle {
+      border: none;
+      padding-top: 10px;
+    }
+
+    .navbar-default .navbar-toggle .icon-bar {
+      background: #eb5424;
+      border-color: transparent;
+    }
+
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus {
+      background-color: transparent
     }
   </style>
+
 </head>
 
 <body>
-  <a href="https://lauyikfung.github.io">
-    <img src="../back.png" class="back" title="Back to the Mainpage"></img>
-  </a>
+  <div class="navbar navbar-default bs-dos-nav navbar-fixed-top sticky-navigation" role="navigation">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target="#rock-navigation">
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+        </button>
+        <a href="https://lauyikfung.github.io" class="navbar-brand">Lewis Yik-fung Lau</a>
+      </div>
+      <nav class="collapse navbar-collapse" id="rock-navigation">
+        <ul class="nav navbar-nav navbar-right main-navigation text-uppercase">
+          <li><a href="https://lauyikfung.github.io/multiomics" class="smoothScroll">Next Project</a></li>
+          <li><a href="https://github.com/THUDM/CodeGeeX" class="smoothScroll">Github</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+  <div class="project_name">
+    <p class="name_detail">CodeGeeX</p>
+  </div>
   <div class="project_name">
     <p class="name_detail">CodeGeeX</p>
   </div>
@@ -214,7 +282,7 @@
           href="https://keg.cs.tsinghua.edu.cn/codegeex/">Blog</a>)</b>是一个具有130亿参数的多编程语言代码生成预训练模型。CodeGeeX采用华为MindSpore框架实现，在鹏城实验室“鹏城云脑II”中的192个节点（共1536个国产昇腾910
       AI处理器）上训练而成。截至2022年6月22日，CodeGeeX历时两个月在20多种编程语言的代码语料库（>8500亿Token）上预训练得到。CodeGeeX有以下特点：
       <br>
-    <ul>
+    <ul class="describe_detail">
       <li>
         <b>高精度代码生成：</b>支持生成Python、C++、Java、JavaScript和Go等多种主流编程语言的代码，在HumanEval-X代码生成任务上取得47%~60%求解率，较其他开源基线模型有更佳的平均性能。
       </li>
@@ -222,13 +290,16 @@
       <li><b>自动编程插件：</b>CodeGeeX插件现已上架VSCode插件市场（完全免费），用户可以通过其强大的少样本生成能力，自定义代码生成风格和能力，更好辅助代码编写。</li>
       <li><b>模型跨平台开源: </b>所有代码和模型权重将会开源，用作研究用途。我们正在适配除昇腾外的其它平台，并将在短期内开源。</li>
     </ul>
-    <b>全新多编程语言评测基准HumanEval-X：</b>HumanEval-X是第一个支持功能正确性评测的多语言、多任务的基准，包含820个人工编写的高质量代码生成题目、测试用例与参考答案，覆盖5种编程语言（Python、C++、Java、JavaScript、Go），支持代码生成与代码翻译能力的评测。<br>
-    本人作为<b>技术贡献</b>参与其中部分代码改进。<br><br>
-    <b>CodeGeeX(<a href="https://keg.cs.tsinghua.edu.cn/codegeex/">Blog</a>)</b>, a large-scale multilingual code
-    generative model with 13 billion parameters, pre-trained on a large
-    code corpus of more than 20 programming languages. As of June 22, 2022, CodeGeeX has been trained on more than 850
-    billion tokens on a cluster of 1,536 Ascend 910 AI Processors. CodeGeeX has several unique features:
-    <ul>
+    <p class="describe_detail">
+      <b>全新多编程语言评测基准HumanEval-X：</b>HumanEval-X是第一个支持功能正确性评测的多语言、多任务的基准，包含820个人工编写的高质量代码生成题目、测试用例与参考答案，覆盖5种编程语言（Python、C++、Java、JavaScript、Go），支持代码生成与代码翻译能力的评测。<br>
+      本人作为<b>技术贡献</b>参与其中部分代码改进。<br><br>
+    </p>
+    <p class="describe_detail">
+      <b>CodeGeeX(<a href="https://keg.cs.tsinghua.edu.cn/codegeex/">Blog</a>)</b>, a large-scale multilingual code
+      generative model with 13 billion parameters, pre-trained on a large
+      code corpus of more than 20 programming languages. As of June 22, 2022, CodeGeeX has been trained on more than 850
+      billion tokens on a cluster of 1,536 Ascend 910 AI Processors. CodeGeeX has several unique features:
+    <ul class="describe_detail">
       <li><b>Multilingual Code Generation: </b>CodeGeeX has good performance for generating executable programs in
         several mainstream programming languages, including Python, C++, Java, JavaScript, Go, etc. </li>
       <li><b>Crosslingual Code Translation: </b>CodeGeeX supports the translation of code snippets between different
@@ -241,20 +312,19 @@
         research purposes. We have also been working on the adaptation to other GPU platforms, which will be ready soon.
       </li>
     </ul>
-    <b>HumanEval-X for Realistic Multilingual Benchmarking.</b> To help standardize the evaluation of multilingual code
-    generation and translation, we develop and release the HumanEval-X Benchmark. HumanEval-X is a new multilingual
-    benchmark that contains 820 human-crafted coding problems in 5 programming languages (Python, C++, Java, JavaScript,
-    and Go), each of these problems is associated with tests and solutions.<br>
-    I have been a <b>contributor</b> with some improvements on this project</p>
+    </p>
+    <p class="describe_detail">
+      <b>HumanEval-X for Realistic Multilingual Benchmarking.</b> To help standardize the evaluation of multilingual
+      code
+      generation and translation, we develop and release the HumanEval-X Benchmark. HumanEval-X is a new multilingual
+      benchmark that contains 820 human-crafted coding problems in 5 programming languages (Python, C++, Java,
+      JavaScript,
+      and Go), each of these problems is associated with tests and solutions.<br>
+      I have been a <b>contributor</b> with some improvements on this project
+    </p>
   </div>
-  <a href="https://github.com/THUDM/CodeGeeX">
-    <img src="../github-label.png" class="github" title="Go to github repository"></img>
-  </a>
-  <img src="../CodeGeeX.png" class="this_img"></img>
   <a href="https://lauyikfung.github.io/multiomics">
     <img src="../multiomics.png" class="next_img"></img></a>
-  <a href="https://lauyikfung.github.io/multiomics">
-    <img src="../down.png" class="down"></img></a>
 </body>
 
 </html>
