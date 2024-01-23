@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Capricorn</title>
+  <title>T-Rex</title>
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <style>
     body {
@@ -260,87 +260,75 @@
       </div>
       <nav class="collapse navbar-collapse" id="rock-navigation">
         <ul class="nav navbar-nav navbar-right main-navigation text-uppercase">
-          <li><a href="https://lauyikfung.github.io/TRex" class="smoothScroll">Previous Project</a></li>
-          <li><a href="https://lauyikfung.github.io/CodeGeeX" class="smoothScroll">Next Project</a></li>
-          <li><a href="https://github.com/CHNFTQ/Capricorn/" class="smoothScroll">Github</a></li>
-          <li><a href="https://www.biorxiv.org/content/10.1101/2023.10.25.564065v1.full.pdf"
-              class="smoothScroll">PDF</a></li>
+          <li><a href="https://lauyikfung.github.io/Capricorn" class="smoothScroll">Next Project</a></li>
+          <li><a href="https://github.com/lauyikfung/T-Rex" class="smoothScroll">Github</a></li>
         </ul>
       </nav>
 
     </div>
   </div>
   <div class="project_name">
-    <p class="name_detail">Capricorn</p>
+    <p class="name_detail">T-Rex</p>
   </div>
   <div class="project_name">
-    <p class="name_detail">Capricorn</p>
+    <p class="name_detail">T-Rex</p>
   </div>
   <div class="project_photo">
-    <img src="../Capricorn.png" class="subvideo project_photo"></img>
+    <img src="../trex.png" class="subvideo project_photo"></img>
   </div>
   <div class="describe">
     <p class="describe_detail" align="center">
-      高分辨率的Hi-C接触矩阵测量基因组的详细三维结构，但高分辨率的实验Hi-C数据生成成本高昂，而且相对罕见。
-      目前有一些增强低分辨率接触矩阵的计算方法，但主要基于自然图像的分辨率增强方法，因此经常使用不区分生物意义接触和背景接触的模型。
-      我们介绍了Capricorn，这是一种用于Hi-C分辨率增强的工具，它将高阶染色质特征作为输入Hi-C接触矩阵的附加视图，并利用扩散概率模型主干来生成高分辨率矩阵。
-      我们表明，Capricorn在跨细胞系设置中优于最先进的方法，对从生成的高分辨率数据调用的循环，其均方误差降低了17.8%，F1分数提高了22.9%。
-      我们还表明，Capricorn在交叉染色体设置中表现良好，与现有方法相比，下游Loop-F1得分再次提高15.7%。论文：<a
-        href="https://www.biorxiv.org/content/10.1101/2023.10.25.564065v1.full.pdf">Enhancing Hi-C contact matrices for
-        loop detection with Capricorn, a multi-view diffusion model</a>。
-      Capricorn的实现和源代码在<a href="https://github.com/CHNFTQ/Capricorn">https://github.com/CHNFTQ/Capricorn</a>。<br>
+      作为计算化学中的一项基本任务，逆向合成预测旨在识别一组反应物来合成目标分子。现有的无模板方法只考虑目标分子的图结构，通常不能很好地推广到稀有反应类型和大分子。
+      在这里，我们提出了T-Rex，这是一种文本辅助逆转录合成预测方法，它利用预先训练的文本语言模型，如ChatGPT，来帮助生成反应物。
+      T-Rex首先利用ChatGPT生成目标分子的描述，并根据描述和分子图对候选反应中心进行排名。
+      然后，它通过查询每种反应物的描述对这些候选者进行重新排序，并检查哪组反应物最能合成目标分子。
+      我们观察到，T-Rex在两个数据集上的表现明显优于基于图的最先进方法，这表明了考虑文本信息的有效性。
+      我们进一步发现，T-Rex的表现优于仅使用基于ChatGPT的描述而没有重新排序步骤的变体，这表明我们的框架如何优于ChatGPT和图形信息的直接集成。
+      总的来说，我们表明，由预先训练的语言模型生成的文本可以显著改善逆向合成预测，为利用ChatGPT来推进计算化学开辟了新的途径。<br>
     <ul class="describe_detail">
-      <li>共同一作：刘益枫（清华大学交叉信息研究院，曾于华盛顿大学春研）、方汤骐（清华大学交叉信息研究院，曾于华盛顿大学春研）、Addie Woicik（华盛顿大学计算机科学与工程学院）<br></li>
-      <li>通讯作者：William S. Noble教授（华盛顿大学计算机科学与工程学院和基因科学系）、王晟教授（华盛顿大学计算机科学与工程学院）<br></li>
-      <li>其他作者：卢敏思（清华大学药学院）、Anupama Jha（华盛顿大学基因科学系）、王虓（普渡大学计算机科学系）、Gang Li（华盛顿大学基因科学系）、
-        Borislav Hristov（华盛顿大学基因科学系）、刘梓轩（华盛顿大学计算机科学与工程学院）、许涵文（华盛顿大学计算机科学与工程学院）</li>
+      <li>共同一作：刘益枫（清华大学交叉信息研究院，曾于华盛顿大学春研）、许涵文（华盛顿大学计算机科学与工程学院）<br></li>
+      <li>通讯作者：王晟教授（华盛顿大学计算机科学与工程学院）<br></li>
+      <li>其他作者：方汤骐（清华大学交叉信息研究院，曾于华盛顿大学春研）、席浩诚（清华大学交叉信息研究院，曾于华盛顿大学春研）、刘梓轩（华盛顿大学计算机科学与工程学院）、Sheng Zhang（微软首席研究员）, Hoifung
+        Poon（微软Health Futures总经理）</li>
     </ul>
     </p>
     <p class="describe_detail">
-      High-resolution Hi-C contact matrices measure the detailed three-dimensional architecture of the
-      genome, but high-resolution experimental Hi-C data are expensive to generate and relatively rare. Computational
-      methods
-      to enhance low-resolution contact matrices exist but are largely based on resolution
-      enhancement methods for natural images and hence often employ models that do not distinguish between biologically
-      meaningful contacts and background contacts. We present Capricorn, a tool for Hi-C
-      resolution enhancement that incorporates high-order chromatin features as additional views of the input
-      Hi-C contact matrix and leverages a diffusion probability model backbone to generate a high-resolution
-      matrix. We show that Capricorn outperforms the state-of-the-art in a cross-cell-line setting, improving existing
-      methods by 17.8% in mean-squared error and 22.9% in F1 score for loops called from the
-      generated high-resolution data. We also show that Capricorn performs well in the cross-chromosome setting, again
-      improving the downstream loop F1 score by 15.7% relative to existing methods. Paper: <a
-        href="https://www.biorxiv.org/content/10.1101/2023.10.25.564065v1.full.pdf">Enhancing Hi-C contact matrices for
-        loop detection with Capricorn, a multi-view diffusion model</a>. Capricorn's
-      implementation and source code are available at <a
-        href="https://github.com/CHNFTQ/Capricorn">https://github.com/CHNFTQ/Capricorn</a>.<br>
+      As a fundamental task in computational chemistry, retrosynthesis prediction aims to identify a set of reactants to
+      synthesize a target molecule. Existing template-free approaches only consider the graph structures of the target
+      molecule, which often cannot generalize well to rare reaction types and large molecules. Here, we propose T-Rex, a
+      text-assisted retrosynthesis prediction approach that exploits pre-trained text language models, such as ChatGPT,
+      to
+      assist the generation of reactants. T-Rex first exploits ChatGPT to generate a description for the target molecule
+      and
+      rank candidate reaction centers based both the description and the molecular graph. It then re-ranks these
+      candidates by
+      querying the descriptions for each reactants and examines which group of reactants can best synthesize the target
+      molecule. We observed that T-Rex substantially outperformed graph-based state-of-the-art approaches on two
+      datasets,
+      indicating the effectiveness of considering text information. We further found that T-Rex outperformed the variant
+      that
+      only use ChatGPT-based description without the re-ranking step, demonstrate how our framework outperformed a
+      straightforward integration of ChatGPT and graph information. Collectively, we show that text generated by
+      pre-trained
+      language models can substantially improve retrosynthesis prediction, opening up new avenues for exploiting ChatGPT
+      to
+      advance computational chemistry.<br>
     <ul class="describe_detail">
       <li>Co-first authors: Yifeng Liu (IIIS of Tsinghua University, previously research at University of
-        Washington),
-        Tangqi
-        Fang(IIIS of Tsinghua University, previously research at University of Washington), Addie Woicik (Paul G. Allen
-        School
-        of Computer Science & Engineering, University of Washington)</li><br>
-      <li>Corresponding authors: William S. Noble (Paul G. Allen School of Computer Science & Engineering and Department
-        of
-        Genome Sciences, University of Washington), Sheng Wang (Paul G. Allen School of Computer Science & Engineering,
-        University of Washington)</li><br>
-      <li>Other authors: Minsi Lu (School of Pharmaceutical Sciences, Tsinghua University), Anupama Jha (Department
-        of
-        Genome
-        Sciences, University of Washington), Xiao Wang (Department of Computer Science, Purdue University), Gang Li
-        (Department
-        of Genome Sciences, University of Washington), Borislav Hristov (Department of Genome Sciences, University of
-        Washington), Zixuan Liu (Paul G. Allen School of Computer Science & Engineering, University of Washington),
-        Hanwen
-        Xu
-        (Paul G. Allen School of Computer Science & Engineering, University of Washington)</li>
+        Washington), Hanwen Xu(Paul G. Allen School of Computer Science & Engineering, University of Washington)</li>
+      <li>Corresponding authors: Sheng Wang (Paul G. Allen School of Computer Science & Engineering,
+        University of Washington)</li>
+      <li>Other authors: Tangqi Fang(IIIS of Tsinghua University, previously research at University of Washington),
+        THaocheng Xi(IIIS of Tsinghua University, previously research at University of Washington),
+        Zixuan Liu (Paul G. Allen School of Computer Science & Engineering, University of
+        Washington), Sheng Zhang(Principal Researcher, Microsoft Research), Hoifung Poon(General Manager, Microsoft
+        Health Futures)
+      </li>
     </ul>
     </p>
   </div>
-  <a href="https://lauyikfung.github.io/TRex">
-    <img src="../trex.png" class="last_img"></img></a>
-  <a href="https://lauyikfung.github.io/CodeGeeX">
-    <img src="../CodeGeeX.png" class="next_img"></img></a>
+  <a href="https://lauyikfung.github.io/Capricorn">
+    <img src="../Capricorn.png" class="next_img"></img></a>
 </body>
 
 </html>
