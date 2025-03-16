@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>TPA</title>
+  <title>Kimi k1.5</title>
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <style>
     body {
@@ -260,56 +260,52 @@
       </div>
       <nav class="collapse navbar-collapse" id="rock-navigation">
         <ul class="nav navbar-nav navbar-right main-navigation text-uppercase">
-          <li><a href="https://lauyikfung.github.io/kimi" class="smoothScroll">Previous Project</a></li>
-          <li><a href="https://lauyikfung.github.io/MARS" class="smoothScroll">Next Project</a></li>
-          <li><a href="https://arxiv.org/abs/2501.06425" class="smoothScroll">Paper</a></li>
-          <li><a href="https://github.com/tensorgi/T6" class="smoothScroll">Github</a></li>
-          <li><a href="https://arxiv.org/pdf/2501.06425" class="smoothScroll">PDF</a></li>
+          <li><a href="https://lauyikfung.github.io/TPA" class="smoothScroll">Next Project</a></li>
+          <li><a href="https://arxiv.org/abs/2501.12599" class="smoothScroll">Paper</a></li>
+          <li><a href="https://kimi.ai" class="smoothScroll">Link</a></li>
         </ul>
       </nav>
 
     </div>
   </div>
   <div class="project_name">
-    <p class="name_detail">Tensor Product Attention Is All You Need</p>
+    <p class="name_detail">Kimi k1.5: Scaling Reinforcement Learning with LLMs</p>
   </div>
   <div class="project_name">
-    <p class="name_detail">Tensor Product Attention Is All You Need</p>
+    <p class="name_detail">Kimi k1.5: Scaling Reinforcement Learning with LLMs</p>
   </div>
   <div class="project_photo">
-    <img src="../images/TPA.png" class="subvideo project_photo"></img>
+    <img src="../images/kimi1-5.png" class="subvideo project_photo"></img>
   </div>
   <div class="describe">
     <p class="describe_detail" align="center">
-      缩放语言模型以处理较长的输入序列通常需要大的键值（KV）缓存，从而在推理过程中产生大量的内存开销。
-      在本文中，我们提出了张量乘积注意（<b>TPA</b> ），这是一种新的注意机制，它使用张量分解来紧凑地表示查询、键和值，从而在推理时显著缩小键值缓存大小。
-      通过将这些表示分解为上下文低秩组件（上下文分解）并与RoPE无缝集成，TPA在提高内存效率的同时提高了模型质量。
-      基于TPA，我们介绍了Tensor ProducT ATTenTion Transformer（T6），这是一种新的序列建模模型架构。通过对语言建模任务的广泛实证评估，我们证明T6在各种指标上超过了包括MHA、MQA、GQA和MLA等基线的性能，包括困惑度等一系列评估基准。
-      值得注意的是，TPA的内存效率使得在固定资源限制下模型鞥能够处理更长的序列，解决了现代语言模型中的关键可扩展性挑战。<br>
+      具有后续标记预测的语言模型预训练已被证明其尺度定律是有效的，但受到可用训练数据量的限制。
+      扩展强化学习为人工智能的持续改进开辟了一条新的方向，并预示大型语言模型可以通过学习探索并获得奖励来扩展其训练数据。
+      然而，之前发表的研究并没有产生具有竞争力的结果。有鉴于此，我们报告了Kimi k1.5的培训实践，这是我们最新的多模态LLM，采用RL进行培训，包括其RL培训技术、多模态数据配方和基础设施优化。
+      长上下文扩展和改进的策略优化方法是我们方法的关键组成部分，它建立了一个简单、有效的RL框架，而不依赖于蒙特卡洛树搜索、值函数和过程奖励模型等更复杂的技术。
+      值得注意的是，我们的系统在多个基准和模式上实现了最先进的推理性能———例如，在AIME上为77.5，在MATH 500上为96.2，在Codeforce上为94百分位数，在MathVista上为74.9——与OpenAI的o1相媲美。
+      此外，我们提出了有效的long2short方法，该方法使用长CoT技术来改进短CoT模型，产生了最先进的短CoT推理结果——例如，在AIME上为60.8，在MATH500上为94.6，在LiveCodeBench上为47.3——大大优于GPT-4o和Claude Sonnet 3.5等现有的短CoT模型（高达+550%）。<br>
     <ul class="describe_detail">
-      <li>共同一作：张伊凡（清华大学交叉信息研究院、上海期智研究院），刘益枫（UCLA计算机系）<br></li>
-      <li>通讯作者：姚期智院士（清华大学交叉信息研究院、上海期智研究院）<br></li>
-      <li>其他作者：袁会卓（UCLA校友）、Zhen Qin（TapTap）、袁洋教授（清华大学交叉信息研究院、上海期智研究院）、顾全全教授（UCLA计算机系）</li>
+      <li>《Kimi k1.5: Scaling Reinforcement Learning with LLMs》及Kimi系列模型版权属于北京月之暗面科技有限公司<br></li>
+      <li>作为本文共同作者之一，本人曾在月之暗面公司实习期间参与Kimi系列模型数学和视觉能力方面的提升。<br></li>
     </ul>
     </p>
     <p class="describe_detail">
-      Scaling language models to handle longer input sequences typically necessitates large key-value (KV) caches, resulting in substantial memory overhead during inference. 
-      In this paper, we propose Tensor Product Attention (<b>TPA</b> ), a novel attention mechanism that uses tensor decompositions to represent queries, keys, and values compactly, significantly shrinking KV cache size at inference time. 
-      By factorizing these representations into contextual low-rank components (contextual factorization) and seamlessly integrating with RoPE, TPA achieves improved model quality alongside memory efficiency. 
-      Based on TPA, we introduce the Tensor ProducT ATTenTion Transformer (T6), a new model architecture for sequence modeling. Through extensive empirical evaluation of language modeling tasks, we demonstrate that T6 exceeds the performance of standard Transformer baselines including MHA, MQA, GQA, and MLA across various metrics, including perplexity and a range of renowned evaluation benchmarks. 
-      Notably, TPAs memory efficiency enables the processing of significantly longer sequences under fixed resource constraints, addressing a critical scalability challenge in modern language models.<br>
+      Language model pretraining with next token prediction has proved effective for scaling compute but is limited to the amount of available training data. 
+      Scaling reinforcement learning (RL) unlocks a new axis for the continued improvement of artificial intelligence, with the promise that large language models (LLMs) can scale their training data by learning to explore with rewards. 
+      However, prior published work has not produced competitive results. In light of this, we report on the training practice of Kimi k1.5, our latest multi-modal LLM trained with RL, including its RL training techniques, multi-modal data recipes, and infrastructure optimization. 
+      Long context scaling and improved policy optimization methods are key ingredients of our approach, which establishes a simplistic, effective RL framework without relying on more complex techniques such as Monte Carlo tree search, value functions, and process reward models. 
+      Notably, our system achieves state-of-the-art reasoning performance across multiple benchmarks and modalities -- e.g., 77.5 on AIME, 96.2 on MATH 500, 94-th percentile on Codeforces, 74.9 on MathVista -- matching OpenAI's o1. 
+      Moreover, we present effective long2short methods that use long-CoT techniques to improve short-CoT models, yielding state-of-the-art short-CoT reasoning results -- e.g., 60.8 on AIME, 94.6 on MATH500, 47.3 on LiveCodeBench -- outperforming existing short-CoT models such as GPT-4o and Claude Sonnet 3.5 by a large margin (up to +550%).<br>
     <ul class="describe_detail">
-      <li>Co-first authors: Yifan Zhang (IIIS, Tsinghua & Shanghai Qi Zhi Institute), Yifeng Liu (UCLA CS Dept.)</li>
-      <li>Corresponding authors: Academician Andrew Chi-Chih Yao (IIIS, Tsinghua & Shanghai Qi Zhi Institute)</li>
-      <li>Other authors: Huizhuo Yuan (Alumna of UCLA), Zhen Qin (TapTap), Prof. Yang Yuan (IIIS, Tsinghua & Shanghai Qi Zhi Institute), Prof. Quanquan Gu (UCLA CS Dept.)</li>
+      <li>Copyright of <i>Kimi k1.5: Scaling Reinforcement Learning with LLMs</i> and Kimi model series belongs to Moonshot AI.</li>
+      <li>As a co-author of Kimi k1.5 paper, Yifeng Liu worked as an intern in Moonshot AI for the improvement of math and vision abilities of Kimi models.</li>
       </li>
     </ul>
     </p>
   </div>
-  <a href="https://lauyikfung.github.io/kimi">
-    <img src="../images/kimi1-5.png" class="last_img"></img></a>
-  <a href="https://lauyikfung.github.io/MARS">
-    <img src="../images/MARS.png" class="next_img"></img></a>
+  <a href="https://lauyikfung.github.io/TPA">
+    <img src="../images/TPA.png" class="next_img"></img></a>
 </body>
 
 </html>
