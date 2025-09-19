@@ -13,7 +13,18 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/templatemo-style.css">
 	<script>
-
+// set the icon
+		if (typeof window === 'undefined') {
+			var link = document.createElement('link');
+			link.rel = 'icon';
+			link.href = 'images/icon.jpg';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		} else {
+			var link = document.createElement('link');
+			link.rel = 'icon';
+			link.href = 'images/icon.jpg';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		}
 	</script>
 </head>
 
@@ -77,10 +88,10 @@
 						<hr>
 						<h3 class="tm-work-h3">Student Research</h3>
 						<hr>
-						<p>Kimi 1.5 project: <a href="https://arxiv.org/abs/2501.12599">Kimi k1.5: Scaling Reinforcement Learning with LLMs</a>
-						TPA: <a href="https://arxiv.org/abs/2501.06425">Tensor Product is All You Need</a>
+						<p>TPA: <a href="https://arxiv.org/abs/2501.06425">Tensor Product is All You Need </a><span style="color: #eb5424">(NeurIPS 2025 Spotlight)</span></p>
+						<p>
 						RPG: <a href="https://arxiv.org/abs/2505.17508">On the Design of KL-Regularized Policy Gradient Algorithms for LLM Reasoning</a></p>
-						<p><a href="https://dl.acm.org/doi/10.1145/3580305.3599790">CodeGeeX</a> <span style="color: #eb5424">(KDD '23)</span>. </p>
+						<p>CodeGeeX: <a href="https://dl.acm.org/doi/10.1145/3580305.3599790">A Pre-Trained Model for Code Generation with Multilingual Benchmarking on HumanEval-X</a> <span style="color: #eb5424">(KDD '23)</span>. </p>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4">
@@ -89,6 +100,7 @@
 						<hr>
 						<h3 class="tm-work-h3">Research Internship</h3>
 						<hr>
+						<p>Kimi 1.5 project: <a href="https://arxiv.org/abs/2501.12599">Kimi k1.5: Scaling Reinforcement Learning with LLMs</a></p>
 						<p>In ByteDance AI Lab: <a href="https://www.statmt.org/wmt22/pdf/2022.wmt-1.104.pdf">The
 								VolcTrans System for WMT22
 								Multilingual Machine Translation Task</a> <span style="color: #eb5424">(WMT22)</span></p>
@@ -101,14 +113,15 @@
 						<hr>
 						<h3 class="tm-work-h3">Visiting Student in UW</h3>
 						<hr>
-						<p><a href="https://arxiv.org/abs/2401.14637">T-Rex: A novel retrosynthesis prediction architecture
+						<p>T-Rex: <a href="https://arxiv.org/abs/2401.14637">A novel retrosynthesis prediction architecture
 								integrating textual and graphic
 								information</a>
 						</p>
-						<p><a href="https://www.biorxiv.org/content/10.1101/2023.10.25.564065v1.full.pdf">A multi-view
-								diffusion model for enhancing Hi-C contact matrices</a> <span style="color: #eb5424">(ISMB 2024)</span>.
-							</a>Both in <a href="https://homes.cs.washington.edu/~swang/">Prof.
-								Sheng Wang</a>'s lab in UW.</p>
+						<p>Capricorn: <a href="https://www.biorxiv.org/content/10.1101/2023.10.25.564065v1.full.pdf">A multi-view
+								diffusion model for enhancing Hi-C contact matrices</a> <span style="color: #eb5424">(ISMB 2024 & <i>Bioinformatics</i> published)</span>.
+							</a></p>
+							<p>Both in <a href="https://homes.cs.washington.edu/~swang/">Prof.
+								Sheng Wang</a>'s lab in University of Washington.</p>
 					</div>
 				</div>
 			</div>
@@ -159,7 +172,7 @@
 											<h3 class="portfolio-item-title"><a href="https://lauyikfung.github.io/TPA/"
 													style="color: inherit">TPA</a>
 											</h3>
-											<p>Tensor Product Attention Is All You Need</p>
+											<p>Tensor Product Attention Is All You Need (<b>NeurIPS 2025 Spotlight</b>)</p>
 										</div>
 									</div>
 								</div>
@@ -170,7 +183,7 @@
 											<h3 class="portfolio-item-title"><a href="https://lauyikfung.github.io/MARS/"
 													style="color: inherit">MARS</a>
 											</h3>
-											<p>MARS: Unleashing the Power of Variance Reduction for Training Large Models</p>
+											<p>MARS: Unleashing the Power of Variance Reduction for Training Large Models (<b>ICML 2025</b>)</p>
 										</div>
 									</div>
 								</div>
@@ -192,7 +205,7 @@
 											<h3 class="portfolio-item-title"><a href="https://lauyikfung.github.io/Capricorn/"
 													style="color: inherit">Capricorn</a>
 											</h3>
-											<p>Enhancing Hi-C contact matrices for loop detection with a multi-view diffusion approach. (<b>ISMB 2024 Accepted & Bioinformatics Published</b>)</p>
+											<p>Enhancing Hi-C contact matrices for loop detection with a multi-view diffusion approach (<b>ISMB 2024 & <i>Bioinformatics</i> Published</b>)</p>
 										</div>
 									</div>
 								</div>
@@ -205,7 +218,7 @@
 											</h3>
 											<p>A large-scale multilingual code generative model with 13 billion parameters,
 												pre-trained on a large code
-												corpus of more than 20 programming languages.</p>
+												corpus of more than 20 programming languages (<b>KDD'23</b>)</p>
 										</div>
 									</div>
 								</div>
@@ -217,7 +230,7 @@
 													style="color: inherit">Medical Multiomics</a>
 											</h3>
 											<p>One non-AI and three AI methods of medical multiomics integration for COVID-19, ZIKV and TNBC
-												datasets.</p>
+												datasets</p>
 										</div>
 									</div>
 								</div>
@@ -228,7 +241,7 @@
 											<h3 class="portfolio-item-title"><a href="https://lauyikfung.github.io/headyliar/"
 													style="color: inherit">
 													Heady Liar</a></h3>
-											<p>A program for mugshot process based on DLIB and PyQt6.</p>
+											<p>A program for mugshot process based on DLIB and PyQt6</p>
 										</div>
 									</div>
 								</div>
