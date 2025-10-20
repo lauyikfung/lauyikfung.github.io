@@ -3,8 +3,11 @@
 
 <head>
   <meta charset="utf-8">
-  <title>RPG</title>
+  <title>Robust Layerwise Scaling Rules</title>
   <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
   <style>
     body {
       background-image: url("../images/bg-subject.jpg");
@@ -243,7 +246,7 @@
       background-color: transparent
     }
   </style>
-
+  
 </head>
 
 <body>
@@ -260,43 +263,42 @@
       </div>
       <nav class="collapse navbar-collapse" id="rock-navigation">
         <ul class="nav navbar-nav navbar-right main-navigation text-uppercase">
-          <li><a href="https://lauyikfung.github.io/rlsr" class="smoothScroll">Previous Project</a></li>
-          <li><a href="https://lauyikfung.github.io/kimi" class="smoothScroll">Next Project</a></li>
-          <li><a href="https://arxiv.org/abs/2505.17508" class="smoothScroll">Paper</a></li>
-          <li><a href="https://github.com/complex-reasoning/RPG" class="smoothScroll">Github</a></li>
-          <li><a href="https://arxiv.org/pdf/2505.17508" class="smoothScroll">PDF</a></li>
+          <li><a href="https://lauyikfung.github.io/RPG" class="smoothScroll">Next Project</a></li>
+          <li><a href="https://arxiv.org/abs/2510.15262" class="smoothScroll">Paper</a></li>
+          <li><a href="https://arxiv.org/pdf/2510.15262" class="smoothScroll">PDF</a></li>
         </ul>
       </nav>
 
     </div>
   </div>
   <div class="project_name">
-    <p class="name_detail">On the Design of KL-Regularized Policy Gradient Algorithms for LLM Reasoning</p>
+    <p class="name_detail">Robust Layerwise Scaling Rules by Proper Weight Decay Tuning</p>
   </div>
   <div class="project_name">
-    <p class="name_detail">On the Design of KL-Regularized Policy Gradient Algorithms for LLM Reasoning</p>
+    <p class="name_detail">Robust Layerwise Scaling Rules by Proper Weight Decay Tuning</p>
   </div>
   <div class="project_photo">
-    <img src="../images/rpg.png" class="subvideo project_photo"></img>
+    <img src="../images/rlsr.png" class="subvideo project_photo"></img>
   </div>
   <div class="describe">
     <p class="describe_detail" align="center">
-      策略梯度算法已成功应用于增强大型语言模型（LLM）的推理能力。尽管Kullback-Leibler（KL）正则化在策略梯度算法中被广泛用于稳定训练，但对如何估计不同的KL散度公式并将其整合到在线强化学习（RL）的替代损失函数中的系统探索提供了一个微妙而系统可探索的设计空间。
-      在本文中，我们提出了正则化策略梯度（RPG），这是一个在在线RL设置中推导和分析KL正则化策略斜率方法的系统框架。我们推导了由正向和反向KL散度正则化的目标的策略梯度和相应的替代损失函数，同时考虑了归一化和非归一化的策略分布。此外，我们提出了完全可微损失函数的推导以及REINFORCE风格的梯度估计器，以适应不同的算法需求。
-      我们使用这些方法对LLM推理的RL进行了广泛的实验，与GRPO、REINFORCE++和DAPO等强基线相比，在训练稳定性和性能方面取得了改进或具有竞争力的结果。<br>
+      经验缩放定律规定了如何分配参数、数据和计算，而最大更新参数化（μP）通过均衡早期更新幅度实现跨宽度的学习率迁移。
+      然而，在现代尺度不变架构中，训练很快进入由优化器控制的稳定状态，其中归一化层会产生向后的尺度敏感性，有效学习率变得依赖于宽度，从而降低 μP 迁移率。
+      我们通过为 AdamW 引入权重衰减缩放规则来解决这个问题，该规则可以保持跨宽度的子层增益。根据经验，每个矩阵参数的奇异值谱在范数中按 \(\sqrt{\eta/\lambda}\) 缩放，形状近似不变；在宽度缩放 \(d\) 下，我们观察到顶部奇异值按\(\sqrt{\eta/\lambda}\cdot d^{0.75}\)缩放。
+      将此观察结果与矩阵类参数的 μP 学习率规则 \(\eta_2 \propto d^{-1}\) 相结合，意味着经验权重衰减缩放规则 \(\lambda_2 \propto \sqrt{d}\) ，该规则近似保持子层增益宽度不变。结合在 \(\eta_1=\Theta_d(1)\) 和 \(\lambda_1=0\) 处训练的类向量参数，这实现了学习率和权重衰减从代理宽度到目标宽度的<b>零样本</b>迁移，消除了每个宽度的扫描。
+      我们在 LLaMA 风格的 Transformer 上以及最小合成设置中验证了该规则，并提供了一种简单的诊断方法，即匹配顶部奇异值，以检查子层增益不变性。我们的结果通过明确控制优化器设置的稳态尺度，将 μP 扩展到接近初始状态之外，为 AdamW 下的宽度稳健超参数迁移提供了一种实用方法。<br>
     </p>
     <p class="describe_detail">
-      Policy gradient algorithms have been successfully applied to enhance the reasoning capabilities of large language models (LLMs). 
-      Despite the widespread use of Kullback-Leibler (KL) regularization in policy gradient algorithms to stabilize training, 
-      the systematic exploration of how different KL divergence formulations can be estimated and integrated into surrogate loss functions for online reinforcement learning (RL) presents a nuanced and systematically explorable design space. 
-      In this paper, we propose regularized policy gradient (RPG), a systematic framework for deriving and analyzing KL-regularized policy gradient methods in the online RL setting. 
-      We derive policy gradients and corresponding surrogate loss functions for objectives regularized by both forward and reverse KL divergences, 
-      considering both normalized and unnormalized policy distributions. Furthermore, we present derivations for fully differentiable loss functions as well as REINFORCE-style gradient estimators, accommodating diverse algorithmic needs. 
-      We conduct extensive experiments on RL for LLM reasoning using these methods, showing improved or competitive results in terms of training stability and performance compared to strong baselines such as GRPO, REINFORCE++, and DAPO.<br>
+      Empirical scaling laws prescribe how to allocate parameters, data, and compute, while maximal-update parameterization (μP) enables learning-rate transfer across widths by equalizing early-time update magnitudes. 
+      However, in modern scale-invariant architectures, training quickly enters an optimizer-governed steady state where normalization layers create backward scale sensitivity and the effective learning rate becomes width dependent, degrading μP transfer. 
+      We address this by introducing a weight-decay scaling rule for AdamW that preserves sublayer gain across widths. Empirically, the singular-value spectrum of each matrix parameter scales in norm as \(\sqrt{\eta/\lambda}\) with an approximately invariant shape; under width scaling \(d\), we observe that the top singular value scales approximately as \(\sqrt{\eta/\lambda}\cdot d^{0.75}\). 
+      Combining this observation with the μP learning-rate rule \(\eta_2 \propto d^{-1}\) for matrix-like parameters implies an empirical weight-decay scaling rule \(\lambda_2 \propto \sqrt{d}\) that approximately keeps sublayer gains width invariant. 
+      Together with vector-like parameters trained at \(\eta_1=\Theta_d(1)\) and \(\lambda_1=0\), this yields <b>zero-shot</b> transfer of both learning rate and weight decay from proxy to target widths, removing per-width sweeps. 
+      We validate the rule on LLaMA-style Transformers and in a minimal synthetic setting, and we provide a simple diagnostic, matching top singular values, to check sublayer-gain invariance. 
+      Our results extend μP beyond the near-init regime by explicitly controlling steady-state scales set by the optimizer, offering a practical recipe for width-robust hyperparameter transfer under AdamW.<br>
     </p>
+    
   </div>
-  <a href="https://lauyikfung.github.io/rlsr">
-    <img src="../images/rlsr.png" class="last_img"></img></a>
   <a href="https://lauyikfung.github.io/kimi">
     <img src="../images/kimi1-5.png" class="next_img"></img></a>
 </body>
