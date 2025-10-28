@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Robust Layerwise Scaling Rules</title>
+  <title>MARS-M</title>
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <script id="MathJax-script" async
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
@@ -263,47 +263,43 @@
       </div>
       <nav class="collapse navbar-collapse" id="rock-navigation">
         <ul class="nav navbar-nav navbar-right main-navigation text-uppercase">
-          <li><a href="https://lauyikfung.github.io/MARS_M" class="smoothScroll">Previous Project</a></li>
-          <li><a href="https://lauyikfung.github.io/RPG" class="smoothScroll">Next Project</a></li>
-          <li><a href="https://arxiv.org/abs/2510.15262" class="smoothScroll">Paper</a></li>
-          <li><a href="https://arxiv.org/pdf/2510.15262" class="smoothScroll">PDF</a></li>
+          <li><a href="https://lauyikfung.github.io/rlsr" class="smoothScroll">Next Project</a></li>
+          <li><a href="https://arxiv.org/abs/2510.21800" class="smoothScroll">Paper</a></li>
+          <li><a href="https://github.com/AGI-Arena/MARS/tree/main/MARS_M" class="smoothScroll">GitHub</a></li>
+          <li><a href="https://arxiv.org/pdf/2510.21800" class="smoothScroll">PDF</a></li>
         </ul>
       </nav>
 
     </div>
   </div>
   <div class="project_name">
-    <p class="name_detail">Robust Layerwise Scaling Rules by Proper Weight Decay Tuning</p>
+    <p class="name_detail">MARS-M: When Variance Reduction Meets Matrices</p>
   </div>
   <div class="project_name">
-    <p class="name_detail">Robust Layerwise Scaling Rules by Proper Weight Decay Tuning</p>
+    <p class="name_detail">MARS-M: When Variance Reduction Meets Matrices</p>
   </div>
   <div class="project_photo">
-    <img src="../images/rlsr.png" class="subvideo project_photo"></img>
+    <img src="../images/MARS_M.png" class="subvideo project_photo"></img>
   </div>
   <div class="describe">
     <p class="describe_detail" align="center">
-      经验缩放定律规定了如何分配参数、数据和计算，而最大更新参数化（μP）通过均衡早期更新幅度实现跨宽度的学习率迁移。
-      然而，在现代尺度不变架构中，训练很快进入由优化器控制的稳定状态，其中归一化层会产生向后的尺度敏感性，有效学习率变得依赖于宽度，从而降低 μP 迁移率。
-      我们通过为 AdamW 引入权重衰减缩放规则来解决这个问题，该规则可以保持跨宽度的子层增益。根据经验，每个矩阵参数的奇异值谱在范数中按 \(\sqrt{\eta/\lambda}\) 缩放，形状近似不变；在宽度缩放 \(d\) 下，我们观察到顶部奇异值按\(\sqrt{\eta/\lambda}\cdot d^{0.75}\)缩放。
-      将此观察结果与矩阵类参数的 μP 学习率规则 \(\eta_2 \propto d^{-1}\) 相结合，意味着经验权重衰减缩放规则 \(\lambda_2 \propto \sqrt{d}\) ，该规则近似保持子层增益宽度不变。结合在 \(\eta_1=\Theta_d(1)\) 和 \(\lambda_1=0\) 处训练的类向量参数，这实现了学习率和权重衰减从代理宽度到目标宽度的<b>零样本</b>迁移，消除了每个宽度的扫描。
-      我们在 LLaMA 风格的 Transformer 上以及最小合成设置中验证了该规则，并提供了一种简单的诊断方法，即匹配顶部奇异值，以检查子层增益不变性。我们的结果通过明确控制优化器设置的稳态尺度，将 μP 扩展到接近初始状态之外，为 AdamW 下的宽度稳健超参数迁移提供了一种实用方法。<br>
+      基于矩阵的预处理优化器，如Muon，最近被证明比基于标量的优化器更有效地训练大规模神经网络，包括大型语言模型（LLM）。
+      另一方面，最近对LLM预训练优化器的基准测试表明，与不采用方差缩减的标准优化器相比，MARS等方差缩减技术可以实现显著的加速。
+      本文介绍了一种新的优化器MARS-M，它将MARS中的方差缩减技术与Muon相结合，以实现两全其美。
+      在标准正则性条件下，我们证明了MARS-M以\(\tilde{\mathcal{O}}(T^{-1/3})\)的速率收敛到一阶驻点，这改进了Muon所达到的\(\tilde{\mathcal{O}}(T^{-1/4})\)速率。
+      我们在语言建模和计算机视觉任务上的实证结果表明，MARS-M在各种下游基准测试中始终产生较低的损失和改进的性能。<br>
     </p>
     <p class="describe_detail">
-      Empirical scaling laws prescribe how to allocate parameters, data, and compute, while maximal-update parameterization (μP) enables learning-rate transfer across widths by equalizing early-time update magnitudes. 
-      However, in modern scale-invariant architectures, training quickly enters an optimizer-governed steady state where normalization layers create backward scale sensitivity and the effective learning rate becomes width dependent, degrading μP transfer. 
-      We address this by introducing a weight-decay scaling rule for AdamW that preserves sublayer gain across widths. Empirically, the singular-value spectrum of each matrix parameter scales in norm as \(\sqrt{\eta/\lambda}\) with an approximately invariant shape; under width scaling \(d\), we observe that the top singular value scales approximately as \(\sqrt{\eta/\lambda}\cdot d^{0.75}\). 
-      Combining this observation with the μP learning-rate rule \(\eta_2 \propto d^{-1}\) for matrix-like parameters implies an empirical weight-decay scaling rule \(\lambda_2 \propto \sqrt{d}\) that approximately keeps sublayer gains width invariant. 
-      Together with vector-like parameters trained at \(\eta_1=\Theta_d(1)\) and \(\lambda_1=0\), this yields <b>zero-shot</b> transfer of both learning rate and weight decay from proxy to target widths, removing per-width sweeps. 
-      We validate the rule on LLaMA-style Transformers and in a minimal synthetic setting, and we provide a simple diagnostic, matching top singular values, to check sublayer-gain invariance. 
-      Our results extend μP beyond the near-init regime by explicitly controlling steady-state scales set by the optimizer, offering a practical recipe for width-robust hyperparameter transfer under AdamW.<br>
+      Matrix-based preconditioned optimizers, such as Muon, have recently been shown to be more efficient than scalar-based optimizers for training large-scale neural networks, including large language models (LLMs). 
+      On the other hand, recent benchmarks on optimizers for LLM pre-training have demonstrated that variance-reduction techniques such as MARS can achieve substantial speedups over standard optimizers that do not employ variance reduction. 
+      In this paper, to achieve the best of both worlds, we introduce MARS-M, a new optimizer that integrates the variance reduction technique in MARS with Muon. 
+      Under standard regularity conditions, we prove that Muon-M converges to a first-order stationary point at a rate of \(\tilde{\mathcal{O}}(T^{-1/3})\), which improves upon \(\tilde{\mathcal{O}}(T^{-1/4})\) rate attained by Muon. 
+      Our empirical results on language modeling and computer vision tasks demonstrate that MARS-M consistently yields lower losses and improved performance across various downstream benchmarks.<br>
     </p>
     
   </div>
-  <a href="https://lauyikfung.github.io/MARS_M">
-    <img src="../images/MARS_M.png" class="last_img"></img></a>
   <a href="https://lauyikfung.github.io/RPG">
-    <img src="../images/rpg.png" class="next_img"></img></a>
+    <img src="../images/rlsr.png" class="next_img"></img></a>
 </body>
 
 </html>
