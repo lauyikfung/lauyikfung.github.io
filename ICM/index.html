@@ -240,7 +240,20 @@
       background-color: transparent
     }
   </style>
-
+  <script>
+    // set the icon
+		if (typeof window === 'undefined') {
+			var link = document.createElement('link');
+			link.rel = 'icon';
+			link.href = '../images/icon.jpg';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		} else {
+			var link = document.createElement('link');
+			link.rel = 'icon';
+			link.href = '../images/icon.jpg';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		}
+  </script>
 </head>
 
 <body>

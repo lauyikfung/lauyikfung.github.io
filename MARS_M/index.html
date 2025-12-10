@@ -246,7 +246,20 @@
       background-color: transparent
     }
   </style>
-  
+  <script>
+    // set the icon
+		if (typeof window === 'undefined') {
+			var link = document.createElement('link');
+			link.rel = 'icon';
+			link.href = '../images/icon.jpg';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		} else {
+			var link = document.createElement('link');
+			link.rel = 'icon';
+			link.href = '../images/icon.jpg';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		}
+  </script>
 </head>
 
 <body>
@@ -263,6 +276,7 @@
       </div>
       <nav class="collapse navbar-collapse" id="rock-navigation">
         <ul class="nav navbar-nav navbar-right main-navigation text-uppercase">
+          <li><a href="https://lauyikfung.github.io/grape" class="smoothScroll">Previous Project</a></li>
           <li><a href="https://lauyikfung.github.io/rlsr" class="smoothScroll">Next Project</a></li>
           <li><a href="https://arxiv.org/abs/2510.21800" class="smoothScroll">Paper</a></li>
           <li><a href="https://github.com/AGI-Arena/MARS/tree/main/MARS_M" class="smoothScroll">GitHub</a></li>
@@ -298,6 +312,8 @@
     </p>
     
   </div>
+  <a href="https://lauyikfung.github.io/grape">
+    <img src="../images/grape.png" class="last_img"></img></a>
   <a href="https://lauyikfung.github.io/rlsr">
     <img src="../images/rlsr.png" class="next_img"></img></a>
 </body>

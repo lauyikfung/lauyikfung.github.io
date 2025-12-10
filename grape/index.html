@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>GRAPE</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+    body {
+      background-image: url("../images/bg-subject.jpg");
+      background-repeat: repeat;
+      background-attachment: fixed;
+      background-size: 100%;
+    }
+
+    .project_name {
+      top: 80px;
+      font-size: 35px;
+      text-align: center;
+      color: #eb5424;
+      font-family: 'FontAwesome';
+      font-weight: bold;
+    }
+
+    .project_detail {
+      top: 80px;
+      font-size: 100px;
+    }
+
+    .subvideo {
+      border-radius: 0px;
+      vertical-align: middle;
+      position: relative;
+      text-decoration: none;
+      font-size: 35px;
+      font-weight: 600;
+      color: white;
+      width: 66%;
+      text-align: left;
+      font-family: "等线";
+      min-height: 36%;
+      max-height: 36%;
+      background-color: rgba(0, 0, 0, 0.25);
+      display: inline-block;
+      -webkit-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.4)inset;
+      -moz-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.4)inset;
+      margin: 0 6px 0px 0;
+      overflow: hidden;
+      line-height: 40px;
+    }
+
+    .subvideo:hover {
+      margin-top: -3px;
+      margin-right: 3px;
+      margin-bottom: -3px;
+      margin-left: -3px;
+      border: 3px solid #000;
+    }
+
+    .project_photo {
+      top: -0.6%;
+      text-align: center;
+      padding-top: 0%;
+      padding-bottom: 0px;
+      border-radius: 20px;
+    }
+
+    .describe {
+      width: 66%;
+      height: 12%;
+      margin: auto;
+    }
+
+    .describe_detail {
+      position: center;
+      color: black;
+      font-size: 20px;
+      text-align: left;
+      word-break: normal | break-all | keep-all;
+      font-family: 'FontAwesome'
+    }
+
+    .github {
+      position: fixed;
+      top: 17%;
+      right: 10%;
+      width: 50px;
+      height: width;
+      border-radius: 100%;
+    }
+
+    .github:hover {
+      src: url("images/software.png");
+    }
+
+    .software {
+      position: fixed;
+      top: 24.3%;
+      right: 10%;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+    }
+
+    .back {
+      position: fixed;
+      top: 0%;
+      left: 0%;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+    }
+
+    .last_arrow {}
+
+    .next_arrow {}
+
+    .last_img {
+      position: fixed;
+      top: 42.5%;
+      left: 2.5%;
+      width: 12%;
+      height: width;
+      border-radius: 8px;
+    }
+
+    .last_img:hover {
+      margin-top: -3px;
+      margin-right: -3px;
+      margin-bottom: -3px;
+      margin-left: -3px;
+      border: 3px solid #000;
+    }
+
+    .next_img {
+      position: fixed;
+      top: 42.5%;
+      right: 2.5%;
+      width: 12%;
+      height: width;
+      border-radius: 8px;
+    }
+
+    .next_img:hover {
+      margin-top: -3px;
+      margin-right: -3px;
+      margin-bottom: -3px;
+      margin-left: -3px;
+      border: 3px solid #000;
+    }
+
+    .up {
+      position: fixed;
+      top: 18.2%;
+      left: 7%;
+      width: 3%;
+      height: 50px;
+      border-radius: 100%;
+    }
+
+    .up:hover {
+      top: 17.2%;
+      margin-top: -3px;
+      margin-right: -3px;
+      margin-bottom: -3px;
+      margin-left: -3px;
+      border: 3px solid #000;
+    }
+
+    .down {
+      position: fixed;
+      top: 71.6%;
+      left: 7%;
+      width: 3%;
+      height: 50px;
+      border-radius: 100%;
+    }
+
+    .down:hover {
+      top: 72.6%;
+      margin-top: -3px;
+      margin-right: -3px;
+      margin-bottom: -3px;
+      margin-left: -3px;
+      border: 3px solid #000;
+    }
+
+    .navbar-default {
+      border: none;
+      -webkit-box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
+      box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-default .navbar-brand {
+      color: #212227;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 45px;
+      padding: 5px 0 0 12px;
+      font-family: 'FontAwesome';
+    }
+
+    .navbar-default .navbar-nav li a {
+      color: #202020;
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 20px;
+      letter-spacing: 1px;
+      font-family: 'FontAwesome';
+    }
+
+    .navbar-default .navbar-nav li a:hover {
+      color: #eb5424;
+    }
+
+    .navbar-default .navbar-nav>li>a:hover,
+    .navbar-default .navbar-nav>li>a:focus {
+      color: #eb5424;
+      background-color: transparent;
+    }
+
+    .navbar-default .navbar-nav>.active>a,
+    .navbar-default .navbar-nav>.active>a:hover,
+    .navbar-default .navbar-nav>.active>a:focus {
+      color: #eb5424;
+      background-color: transparent;
+    }
+
+    .navbar-default .navbar-toggle {
+      border: none;
+      padding-top: 10px;
+    }
+
+    .navbar-default .navbar-toggle .icon-bar {
+      background: #eb5424;
+      border-color: transparent;
+    }
+
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus {
+      background-color: transparent
+    }
+  </style>
+  <script>
+    // set the icon
+		if (typeof window === 'undefined') {
+			var link = document.createElement('link');
+			link.rel = 'icon';
+			link.href = '../images/icon.jpg';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		} else {
+			var link = document.createElement('link');
+			link.rel = 'icon';
+			link.href = '../images/icon.jpg';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		}
+  </script>
+</head>
+
+<body>
+  <div class="navbar navbar-default bs-dos-nav navbar-fixed-top sticky-navigation" role="navigation">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target="#rock-navigation">
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+        </button>
+        <a href="https://lauyikfung.github.io" class="navbar-brand">Lewis Yik-fung Lau</a>
+      </div>
+      <nav class="collapse navbar-collapse" id="rock-navigation">
+        <ul class="nav navbar-nav navbar-right main-navigation text-uppercase">
+          <li><a href="https://lauyikfung.github.io/MARS_M" class="smoothScroll">Next Project</a></li>
+          <li><a href="https://arxiv.org/abs/2512.07805" class="smoothScroll">Paper</a></li>
+          <li><a href="https://github.com/model-architectures/GRAPE" class="smoothScroll">GitHub</a></li>
+          <li><a href="https://arxiv.org/pdf/2512.07805" class="smoothScroll">PDF</a></li>
+          <li><a href="https://model-architectures.github.io/GRAPE" class="smoothScroll">Project Page</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+  <div class="project_name">
+    <p class="name_detail">Group Representational Position Encoding</p>
+  </div>
+  <div class="project_name">
+    <p class="name_detail">Group Representational Position Encoding</p>
+  </div>
+  <div class="project_photo">
+    <img src="../images/grape.png" class="subvideo project_photo"></img>
+  </div>
+  <div class="describe">
+    <p class="describe_detail" align="center">
+      GRAPE（Group Representative Position Encoding）是一个基于群操作的位置编码统一框架。 
+      GRAPE汇集了两种机制：<ol class="describe_detail">
+        <li class="describe_detail">\(\mathrm{SO}(d)\) 中的乘法旋转（乘性GRAPE）和</li>
+        <li class="describe_detail">一般线性群 \(\mathrm{GL}\) 中幂零作用产生的加性logit偏置（加性GRAPE）。</li>
+      </ol>
+    </p>
+    <p class="describe_detail">
+      在乘性GRAPE中，一个位置\(n \in \mathbb{Z}\)（或\(t \in \mathbb{R}\)）用秩2偏斜生成器\(\mathbf{L} \in \mathbb{R}^{d \times d}\)可以表示为\(\mathbf{G}(n)=\exp(n\,\omega\,\mathbf{L})\)，产生一个具有闭式矩阵指数的相对、复合、保范数的映射。 
+      当\(d/2\)平面是具有对数均匀谱的规范坐标对时，RoPE被精确地恢复。训练的对易子空间和紧凑的非对易子控件混合严格扩展了这种几何结构，以单计算头\(\mathcal{O}(d)\)和\(\mathcal{O}(r d)\)的成本捕获跨子空间特征耦合。 
+      在加性GRAPE中，加性逻辑作为秩1（或低秩）的幂零操作出现，从而基于ALiBi和Forgetting Transformer（FoX）进行推广，同时保持精确的相对位置的表达和流式缓存能力。 
+      总之，GRAPE为长上下文模型中的位置几何提供了一个包含RoPE和ALiBi等特例的基于原则的设计空间。<br>
+    </p>
+    </p>
+    <p class="describe_detail">
+      GRAPE (Group RepresentAtional Position Encoding) is a unified framework for positional encoding based on group actions. 
+      GRAPE brings together two families of mechanisms: 
+      <ol class="describe_detail">
+        <li class="describe_detail">multiplicative rotations (Multiplicative GRAPE) in \(\mathrm{SO}(d)\) and</li>
+        <li class="describe_detail">additive logit biases (Additive GRAPE) arising from unipotent actions in the general linear group \(\mathrm{GL}\).</li>
+      </ol>
+    </p>
+    <p class="describe_detail">
+      In Multiplicative GRAPE, a position \(n \in \mathbb{Z}\) (or \(t \in \mathbb{R}\)) acts as \(\mathbf{G}(n)=\exp(n\,\omega\,\mathbf{L})\) with a rank-2 skew generator \(\mathbf{L} \in \mathbb{R}^{d \times d}\), yielding a relative, compositional, norm-preserving map with a closed-form matrix exponential. 
+      RoPE is recovered exactly when the \(d/2\) planes are the canonical coordinate pairs with log-uniform spectrum. Learned commuting subspaces and compact non-commuting mixtures strictly extend this geometry to capture cross-subspace feature coupling at \(\mathcal{O}(d)\) and \(\mathcal{O}(r d)\) cost per head, respectively. 
+      In Additive GRAPE, additive logits arise as rank-1 (or low-rank) unipotent actions, recovering ALiBi and the Forgetting Transformer (FoX) as exact special cases while preserving an exact relative law and streaming cacheability. 
+      Altogether, GRAPE supplies a principled design space for positional geometry in long-context models, subsuming RoPE and ALiBi as special cases.<br>
+    </p>
+    
+  </div>
+  <a href="https://lauyikfung.github.io/MARS_M">
+    <img src="../images/MARS_M.png" class="next_img"></img></a>
+</body>
+
+</html>
