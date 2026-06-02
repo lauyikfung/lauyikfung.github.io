@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Towards Simple and Provable Parameter-Free Adaptive Gradient Methods</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <style>
+    body {
+      background-image: url("../images/bg-subject.jpg");
+      background-repeat: repeat;
+      background-attachment: fixed;
+      background-size: 100%;
+    }
+
+    .project_name {
+      top: 80px;
+      font-size: 35px;
+      text-align: center;
+      color: #eb5424;
+      font-family: 'FontAwesome';
+      font-weight: bold;
+    }
+
+    .project_detail {
+      top: 80px;
+      font-size: 100px;
+    }
+
+    .subvideo {
+      border-radius: 0px;
+      vertical-align: middle;
+      position: relative;
+      text-decoration: none;
+      font-size: 35px;
+      font-weight: 600;
+      color: white;
+      width: 66%;
+      text-align: left;
+      font-family: "等线";
+      min-height: 36%;
+      max-height: 36%;
+      background-color: rgba(0, 0, 0, 0.25);
+      display: inline-block;
+      -webkit-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.4)inset;
+      -moz-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.4)inset;
+      margin: 0 6px 0px 0;
+      overflow: hidden;
+      line-height: 40px;
+    }
+
+    .subvideo:hover {
+      margin-top: -3px;
+      margin-right: 3px;
+      margin-bottom: -3px;
+      margin-left: -3px;
+      border: 3px solid #000;
+    }
+
+    .project_photo {
+      top: -0.6%;
+      text-align: center;
+      padding-top: 0%;
+      padding-bottom: 0px;
+      border-radius: 20px;
+    }
+
+    .describe {
+      width: 66%;
+      height: 12%;
+      margin: auto;
+    }
+
+    .describe_detail {
+      position: center;
+      color: black;
+      font-size: 20px;
+      text-align: left;
+      word-break: normal | break-all | keep-all;
+      font-family: 'FontAwesome'
+    }
+
+    .github {
+      position: fixed;
+      top: 17%;
+      right: 10%;
+      width: 50px;
+      height: width;
+      border-radius: 100%;
+    }
+
+    .github:hover {
+      src: url("images/software.png");
+    }
+
+    .software {
+      position: fixed;
+      top: 24.3%;
+      right: 10%;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+    }
+
+    .back {
+      position: fixed;
+      top: 0%;
+      left: 0%;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+    }
+
+    .last_arrow {}
+
+    .next_arrow {}
+
+    .last_img {
+      position: fixed;
+      top: 42.5%;
+      left: 2.5%;
+      width: 12%;
+      height: width;
+      border-radius: 8px;
+    }
+
+    .last_img:hover {
+      margin-top: -3px;
+      margin-right: -3px;
+      margin-bottom: -3px;
+      margin-left: -3px;
+      border: 3px solid #000;
+    }
+
+    .next_img {
+      position: fixed;
+      top: 42.5%;
+      right: 2.5%;
+      width: 12%;
+      height: width;
+      border-radius: 8px;
+    }
+
+    .next_img:hover {
+      margin-top: -3px;
+      margin-right: -3px;
+      margin-bottom: -3px;
+      margin-left: -3px;
+      border: 3px solid #000;
+    }
+
+    .up {
+      position: fixed;
+      top: 18.2%;
+      left: 7%;
+      width: 3%;
+      height: 50px;
+      border-radius: 100%;
+    }
+
+    .up:hover {
+      top: 17.2%;
+      margin-top: -3px;
+      margin-right: -3px;
+      margin-bottom: -3px;
+      margin-left: -3px;
+      border: 3px solid #000;
+    }
+
+    .down {
+      position: fixed;
+      top: 71.6%;
+      left: 7%;
+      width: 3%;
+      height: 50px;
+      border-radius: 100%;
+    }
+
+    .down:hover {
+      top: 72.6%;
+      margin-top: -3px;
+      margin-right: -3px;
+      margin-bottom: -3px;
+      margin-left: -3px;
+      border: 3px solid #000;
+    }
+
+    .navbar-default {
+      border: none;
+      -webkit-box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
+      box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-default .navbar-brand {
+      color: #212227;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 45px;
+      padding: 5px 0 0 12px;
+      font-family: 'FontAwesome';
+    }
+
+    .navbar-default .navbar-nav li a {
+      color: #202020;
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 20px;
+      letter-spacing: 1px;
+      font-family: 'FontAwesome';
+    }
+
+    .navbar-default .navbar-nav li a:hover {
+      color: #eb5424;
+    }
+
+    .navbar-default .navbar-nav>li>a:hover,
+    .navbar-default .navbar-nav>li>a:focus {
+      color: #eb5424;
+      background-color: transparent;
+    }
+
+    .navbar-default .navbar-nav>.active>a,
+    .navbar-default .navbar-nav>.active>a:hover,
+    .navbar-default .navbar-nav>.active>a:focus {
+      color: #eb5424;
+      background-color: transparent;
+    }
+
+    .navbar-default .navbar-toggle {
+      border: none;
+      padding-top: 10px;
+    }
+
+    .navbar-default .navbar-toggle .icon-bar {
+      background: #eb5424;
+      border-color: transparent;
+    }
+
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus {
+      background-color: transparent
+    }
+  </style>
+  <script>
+    // set the icon
+		if (typeof window === 'undefined') {
+			var link = document.createElement('link');
+			link.rel = 'icon';
+			link.href = '../images/icon.jpg';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		} else {
+			var link = document.createElement('link');
+			link.rel = 'icon';
+			link.href = '../images/icon.jpg';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		}
+  </script>
+</head>
+
+<body>
+  <div class="navbar navbar-default bs-dos-nav navbar-fixed-top sticky-navigation" role="navigation">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target="#rock-navigation">
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+        </button>
+        <a href="https://lauyikfung.github.io" class="navbar-brand">Lewis Yik-fung Lau</a>
+      </div>
+      <nav class="collapse navbar-collapse" id="rock-navigation">
+        <ul class="nav navbar-nav navbar-right main-navigation text-uppercase">
+          <li><a href="https://lauyikfung.github.io/TPA" class="smoothScroll">Previous Project</a></li>
+          <li><a href="https://lauyikfung.github.io/MARS" class="smoothScroll">Next Project</a></li>
+          <li><a href="https://arxiv.org/abs/2412.19444" class="smoothScroll">Paper</a></li>
+          <li><a href="https://arxiv.org/pdf/2412.19444" class="smoothScroll">PDF</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+  <div class="project_name">
+    <p class="name_detail">Towards Simple and Provable Parameter-Free Adaptive Gradient Methods</p>
+  </div>
+  <div class="project_name">
+    <p class="name_detail">Towards Simple and Provable Parameter-Free Adaptive Gradient Methods</p>
+  </div>
+  <div class="project_photo">
+    <img src="../images/adampp.png" class="subvideo project_photo"></img>
+  </div>
+  <div class="describe">
+    <p class="describe_detail" align="center">
+      AdaGrad 和 Adam 等优化算法通过在优化过程中动态调整学习率，极大地推动了深度模型的训练进展。然而，在实际应用中，对学习率进行人为的、试探性的调优不仅充满挑战，还会导致效率低下。
+      为了解决这一问题，近期研究致力于开发一类“无参数”算法，旨在无需调优学习率的前提下依然能高效运行。尽管已开展了诸多相关工作，但现有的 AdaGrad 和 Adam 无参数变体往往过于复杂，且/或缺乏正式的收敛性理论保证。
+      本文提出了 AdaGrad++ 和 Adam++——这是 AdaGrad 和 Adam 的两种新颖且简洁的无参数变体，并均具备收敛性理论保证。我们证明，在凸优化问题中，AdaGrad++ 无需预设学习率假设，即可达到与 AdaGrad 相媲美的收敛速率。
+      同样地，Adam++ 也无需依赖关于学习率的任何特定条件，便能实现与 Adam 一致的收敛速率。在各类深度学习任务上开展的实验结果充分验证了 Adam++ 所展现出的极具竞争力的性能。<br>
+    </p>
+    <p class="describe_detail">
+      Optimization algorithms such as AdaGrad and Adam have significantly advanced the training of deep models by dynamically adjusting the learning rate during the optimization process. 
+      However, ad-hoc tuning of learning rates poses a challenge and leads to inefficiencies in practice. 
+      To address this issue, recent research has focused on developing ``parameter-free'' algorithms that operate effectively without the need for learning rate tuning. 
+      Despite these efforts, existing parameter-free variants of AdaGrad and Adam tend to be overly complex and/or lack formal convergence guarantees. 
+      In this paper, we present AdaGrad++ and Adam++, novel and simple parameter-free variants of AdaGrad and Adam with convergence guarantees. 
+      We prove that AdaGrad++ achieves comparable convergence rates to AdaGrad in convex optimization without predefined learning rate assumptions. 
+      Similarly, Adam++ matches the convergence rate of Adam without relying on any conditions on the learning rates. 
+      Experimental results across various deep learning tasks validate the competitive performance of Adam++.<br>
+    </p>
+  </div>
+  <a href="https://lauyikfung.github.io/TPA">
+    <img src="../images/TPA.png" class="last_img"></img></a>
+  <a href="https://lauyikfung.github.io/MARS">
+    <img src="../images/MARS.png" class="next_img"></img></a>
+</body>
+
+</html>
