@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Self-Distilled Policy Gradient</title>
+  <title>Seed 2.0</title>
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <script id="MathJax-script" async
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
@@ -276,46 +276,48 @@
       </div>
       <nav class="collapse navbar-collapse" id="rock-navigation">
         <ul class="nav navbar-nav navbar-right main-navigation text-uppercase">
-          <li><a href="https://lauyikfung.github.io/seed2.0" class="smoothScroll">Previous Project</a></li>
-          <li><a href="https://lauyikfung.github.io/gdn_mup" class="smoothScroll">Next Project</a></li>
-          <li><a href="https://arxiv.org/abs/2606.04036" class="smoothScroll">Paper</a></li>
-          <li><a href="https://github.com/lauyikfung/SDPG" class="smoothScroll">GitHub</a></li>
-          <li><a href="https://arxiv.org/pdf/2606.04036" class="smoothScroll">PDF</a></li>
-          <li><a href="https://lauyikfung.github.io/SDPG" class="smoothScroll">Project Page</a></li>
+          <li><a href="https://lauyikfung.github.io/sdpg" class="smoothScroll">Next Project</a></li>
+          <li><a href="https://arxiv.org/abs/2607.00248" class="smoothScroll">Paper</a></li>
+          <li><a href="https://arxiv.org/pdf/2607.00248" class="smoothScroll">PDF</a></li>
+          <li><a href="https://seed.bytedance.com/en/seed2" class="smoothScroll">Project Page</a></li>
         </ul>
       </nav>
 
     </div>
   </div>
   <div class="project_name">
-    <p class="name_detail">Self-Distilled Policy Gradient</p>
+    <p class="name_detail">Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity</p>
   </div>
   <div class="project_name">
-    <p class="name_detail">Self-Distilled Policy Gradient</p>
+    <p class="name_detail">Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity</p>
   </div>
   <div class="project_photo">
-    <img src="../images/sdpg.png" class="subvideo project_photo"></img>
+    <img src="../images/seed2.0.png" class="subvideo project_photo"></img>
   </div>
   <div class="describe">
     <p class="describe_detail" align="center">
-      “在线策略自蒸馏”（On-policy self-distillation）是一种极具潜力的密集监督来源，尤其适用于稀疏奖励强化学习场景；在该机制下，语言模型会基于一种“特权上下文”（privileged context）来对其自身的生成内容进行监督。
-      具体而言，这一机制可被实例化为一种辅助性的、基于全词汇表的“学生-教师”逆向 Kullback-Leibler（KL）散度损失。鉴于此，我们提出了一种名为 SDPG 的自蒸馏策略梯度框架。
-      该框架融合了“组相对验证器优势”（group-relative verifier advantages）与归一化标准差、精确的全词汇表在策略自蒸馏，以及参考策略 KL 正则化技术。
-      实证结果表明，相比于 RLVR 算法及各类自蒸馏基线模型，SDPG 在训练稳定性和性能方面均实现了显著提升。<br>
+      Seed2.0 系列模型正式发布， 提供 Pro、Lite、Mini 三款不同尺寸的通用 Agent 模型。
+      该系列通用模型的多模态理解能力实现全面升级，并强化了 LLM 与 Agent 能力，使模型在真实长链路任务中能够稳定推进。
+      Seed2.0 还进一步把能力边界从竞赛级推理扩展到研究级任务，在高经济价值与科研价值任务评测中达到业界第一梯队水平。<br>
+      <ul class="describe_detail">
+      <li>《Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity》及Seed系列模型版权属于字节跳动。<br></li>
+      <li>作为本文贡献者之一，本人曾在字节跳动公司实习期间参与相关研发工作。<br></li>
+    </ul>
     </p>
     </p>
     <p class="describe_detail">
-      On-policy self-distillation, where a language model conditions on privileged context to supervise its own generations, is a promising source of dense supervision for sparse-reward reinforcement learning. 
-      Actually, it can be instantiated as an auxiliary full-vocabulary student-to-teacher reverse Kullback-Leibler divergence loss. 
-      We therefore propose SDPG, a self-distilled policy-gradient framework that combines group-relative verifier advantages with normalized standard deviation, exact full-vocabulary on-policy self-distillation, as well as reference-policy KL regularization. 
-      Empirically, SDPG improves stability and performance over RLVR and self-distillation baselines.<br>
+      The Seed2.0 series model has been officially released, offering three general-purpose agent models of varying sizes—Pro, Lite, and Mini.
+      The general-purpose models in this series deliver a comprehensive upgrade in multimodal understanding, with strengthened LLM and Agent capabilities that enable steady progression in real-world long-horizon tasks.
+      Seed2.0 further expands its capability frontier from competition-level reasoning to research-grade tasks, achieving first-tier industry performance in evaluations on high economic-value and high scientific-value workloads.<br>
+          <ul class="describe_detail">
+      <li>Copyright of <i>Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity</i> and Seed model series belong to ByteDance Inc.</li>
+      <li>As a contributor of the Seed2.0 paper, Yifeng Liu worked as an intern in ByteDance Inc. for related research.</li>
+      </li>
     </p>
     
   </div>
-  <a href="https://lauyikfung.github.io/seed2.0">
-    <img src="../images/seed2.0.png" class="last_img"></img></a>
-  <a href="https://lauyikfung.github.io/gdn_mup">
-    <img src="../images/gdn_mup.png" class="next_img"></img></a>
+  <a href="https://lauyikfung.github.io/sdpg">
+    <img src="../images/sdpg.png" class="next_img"></img></a>
 </body>
 
 </html>
