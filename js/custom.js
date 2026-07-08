@@ -9,6 +9,22 @@ jQuery(document).ready(function($){
 	    var $container 	= $('.iso-box-wrapper'), 
 	    	$imgs 		= $('.iso-box img');
 
+		$('.portfolio-thumb').each(function(){
+			var $thumb = $(this);
+
+			if ( $thumb.next('.portfolio-caption').length ) {
+				return;
+			}
+
+			var $overlay = $thumb.find('.portfolio-overlay');
+			var $caption = $('<div class="portfolio-caption"></div>');
+
+			$caption
+				.append($overlay.find('.portfolio-item-title').first().clone())
+				.append($overlay.find('p').first().clone());
+			$thumb.after($caption);
+		});
+
 
 
 	    $container.imagesLoaded(function () {
